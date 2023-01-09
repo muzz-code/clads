@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.decagonhq.clads.ui.profile.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/home_fragment">
+        <action
+            android:id="@+id/action_nav_home_to_editProfileFragment"
+            app:destination="@id/editProfileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_nav_home_to_clientDetailsFragment"
+            app:destination="@id/clientDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_nav_home_to_transactionHistory2"
+            app:destination="@id/transaction_history" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_media"
+        android:name="com.decagonhq.clads.ui.media.MediaFragment"
+        android:label="Photo Gallery"
+        tools:layout="@layout/media_fragment">
+        <action
+            android:id="@+id/action_nav_media_to_photoGalleryEditImageFragment"
+            app:destination="@id/photoGalleryEditImageFragment"
+
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@id/nav_media"
+            app:popUpToInclusive="false" />
+
+        <action
+            android:id="@+id/action_nav_media_to_mediaFragmentPhotoName"
+            app:destination="@id/mediaFragmentPhotoName"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_messages"
+        android:name="com.decagonhq.clads.ui.messages.MessagesFragment"
+        android:label="@string/menu_messages"
+        tools:layout="@layout/messages_fragment" >
+        <action
+            android:id="@+id/action_nav_messages_to_clientChatFragment2"
+            app:destination="@id/clientChatFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resourceGeneralFragment"
+        android:name="com.decagonhq.clads.ui.resource.ResourceGeneralFragment"
+        android:label="@string/resources"
+        tools:layout="@layout/resource_general_fragment">
+        <action
+            android:id="@+id/action_resourcesFragment_to_resourceVideosFragment"
+            app:destination="@id/resourceVideosFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_resourceGeneralFragment_to_resourceArticlesFragment"
+            app:destination="@id/resourceArticlesFragment" />
+        <action
+            android:id="@+id/action_resourceGeneralFragment_to_individualVideoScreenFragment"
+            app:destination="@id/individualVideoScreenFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_resourceGeneralFragment_to_resourceArticlesFragment2"
+            app:destination="@id/resourceArticlesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/subscriptionFragment"
+        android:name="com.decagonhq.clads.ui.subscription.SubscriptionFragment"
+        android:label="@string/subscription"
+        tools:layout="@layout/subscription_fragment" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.decagonhq.clads.ui.profile.editprofile.EditProfileFragment"
+        android:label="@string/edit_profile"
+        tools:layout="@layout/edit_profile_fragment" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addClientFragment"
+        android:name="com.decagonhq.clads.ui.client.AddClientFragment"
+
+        tools:layout="@layout/add_client_fragment">
+        <action
+            android:id="@+id/action_addClientFragment_to_clientFragment"
+            app:destination="@id/clientFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="client"
+            android:defaultValue="@null"
+            app:argType="com.decagonhq.clads.data.domain.client.Client"
+            app:nullable="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/measurementsFragment"
+        android:name="com.decagonhq.clads.ui.client.MeasurementsFragment"
+        android:label="measurements_fragment"
+        tools:layout="@layout/measurements_fragment">
+
+        <argument
+            android:name="dress_measurement"
+            android:defaultValue="@null"
+            app:argType="com.decagonhq.clads.data.domain.client.Measurement"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/deliveryAddressFragment"
+        android:name="com.decagonhq.clads.ui.client.DeliveryAddressFragment"
+        android:label="@string/add_client"
+        tools:layout="@layout/delivery_address_fragment">
+        <argument
+            android:name="delivery_address"
+            android:defaultValue="@null"
+            app:argType="com.decagonhq.clads.data.domain.client.DeliveryAddress"
+            app:nullable="true" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/addAddressFragment"
+        android:name="com.decagonhq.clads.ui.client.AddAddressFragment"
+        android:label="@string/add_client"
+        tools:layout="@layout/add_address_fragment">
+        <action
+            android:id="@+id/action_addAddressFragment_to_deliveryAddressFragment"
+            app:destination="@id/deliveryAddressFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentMethodFragment"
+        android:name="com.decagonhq.clads.ui.profile.editprofile.PaymentMethodFragment"
+        android:label="@string/payment_method"
+        tools:layout="@layout/payment_method_fragment" />
+
+    <fragment
+        android:id="@+id/clientFragment"
+        android:name="com.decagonhq.clads.ui.client.ClientFragment"
+        android:label="@string/client"
+        tools:layout="@layout/client_fragment">
+        <action
+            android:id="@+id/action_clientFragment_to_addClientFragment"
+            app:destination="@id/addClientFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <argument
+            android:name="client"
+            android:defaultValue="@null"
+            app:argType="com.decagonhq.clads.data.domain.client.Client"
+            app:nullable="true" />
+
+        <action
+            android:id="@+id/action_clientFragment_to_clientDetailsFragment"
+            app:destination="@id/clientDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/photoGalleryEditImageFragment"
+        android:name="com.decagonhq.clads.ui.media.PhotoGalleryEditImageFragment"
+        android:label="Elegant suit for men"
+        tools:layout="@layout/photo_gallery_edit_image_fragment">
+        <argument android:name="imageUri" />
+
+        <action
+            android:id="@+id/action_mediaFragmentRecyclerViewItemClicked_to_nav_media"
+            app:destination="@id/nav_media"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <argument
+            android:name="imageName"
+            app:argType="string" />
+        <argument
+            android:name="fileId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_photoGalleryEditImageFragment_to_nav_media"
+            app:destination="@id/nav_media"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/nav_media"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mediaFragmentPhotoName"
+        android:name="com.decagonhq.clads.ui.media.MediaFragmentPhotoName"
+        android:label="MediaFragmentPhotoName"
+        tools:layout="@layout/media_fragment_photo_name">
+        <argument
+            android:name="imageData"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_mediaFragmentPhotoName_to_nav_media"
+            app:destination="@id/nav_media"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/nav_media"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/resourceVideosFragment"
+        android:name="com.decagonhq.clads.ui.resource.ResourceVideosFragment"
+        android:label="@string/videos"
+        tools:layout="@layout/resource_videos_fragment">
+        <action
+            android:id="@+id/action_resourceVideosFragment_to_individualVideoScreenFragment"
+            app:destination="@id/individualVideoScreenFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/resourceArticlesFragment"
+        android:name="com.decagonhq.clads.ui.resource.ResourceArticlesFragment"
+        android:label="@string/articles"
+        tools:layout="@layout/resource_articles_fragment">
+        <action
+            android:id="@+id/action_resourceArticlesFragment_to_resourceViewIndividualArticleFragment"
+            app:destination="@id/resourceViewIndividualArticleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/individualVideoScreenFragment"
+        android:name="com.decagonhq.clads.ui.resource.IndividualVideoScreenFragment"
+        android:label="Videos"
+        tools:layout="@layout/individual_video_screen_fragment" />
+    <fragment
+        android:id="@+id/resourceViewIndividualArticleFragment"
+        android:name="com.decagonhq.clads.ui.resource.ResourceIndividualArticleWebViewFragment"
+        android:label="Articles" />
+    <fragment
+        android:id="@+id/clientDetailsFragment"
+        android:name="com.decagonhq.clads.ui.client.ClientDetailsFragment"
+        android:label="Client"
+        tools:layout="@layout/client_details_fragment">
+        <argument
+            android:name="clientModel"
+            android:defaultValue="@null"
+            app:argType="com.decagonhq.clads.data.domain.client.Client"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_clientDetailsFragment_to_addClientFragment"
+            app:destination="@id/addClientFragment" />
+
+    </fragment>
+      <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.decagonhq.clads.ui.profile.editprofile.MapFragment"
+        android:label=""
+        tools:layout="@layout/fragment_map" />
+        <action
+            android:id="@+id/action_mapFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment"
+            app:popUpTo="@id/editProfileFragment"
+            app:popUpToInclusive="false" />
+    <fragment
+        android:id="@+id/clientChatFragment"
+        android:name="com.decagonhq.clads.ui.messages.ClientChatFragment"
+        android:label=""
+        tools:layout="@layout/fragment_client_chat" >
+        <argument
+            android:name="clientData"
+            app:argType="com.decagonhq.clads.data.domain.MessagesNotificationModel"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/transaction_history"
+        android:name="com.decagonhq.clads.ui.transactionhistory.TransactionHistory"
+        android:label="Transaction History" />
+</navigation>

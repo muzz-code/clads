@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/account_fragment_edit_location_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/margin_37dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehaviour"
+    tools:context=".ui.profile.editprofile.AccountFragmentBottomSheetFragment">
+
+    <TextView
+        android:id="@+id/account_fragment_location_bottom_sheet_edit_address_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_36dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/edit_address"
+        android:textColor="@color/toolbar_text_color"
+        android:textSize="@dimen/text_size_18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <RadioGroup
+        android:id="@+id/account_fragment_location_bottom_sheet_edit_location_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_24dp"
+        android:layout_marginTop="@dimen/margin_30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_fragment_location_bottom_sheet_edit_address_textview">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/account_fragment_location_bottom_sheet_edit_location_on_map_now_radio_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:fontFamily="@font/poppins"
+            android:layout_marginBottom="@dimen/margin_30dp"
+            android:background="@drawable/location_drawable_background_selector"
+            android:text="@string/go_to_map"
+            android:outlineProvider="background"
+            android:textAlignment="center"
+            android:textColor="@color/ash"
+            android:textSize="@dimen/text_size_14sp" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/account_fragment_location_bottom_sheet_edit_location_manually_radio_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:background="@drawable/location_drawable_background_selector"
+            android:fontFamily="@font/poppins"
+            android:text="@string/edit_address_manually"
+            android:textAlignment="center"
+            android:textColor="@color/ash"
+            android:textSize="@dimen/text_size_14sp" />
+
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

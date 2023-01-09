@@ -1,0 +1,44 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Clads" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/deep_sky_blue</item>
+        <item name="colorPrimaryVariant">@color/deep_sky_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/deep_sky_blue</item>
+        <item name="colorSecondaryVariant">@color/deep_sky_blue</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <!--Set Hamburger Color-->
+        <item name="colorControlNormal">@color/black</item>
+    </style>
+
+    <style name="material_edit_text" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="fontFamily">@font/poppins</item>
+        <item name="errorEnabled">true</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen_layer_list</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/deep_sky_blue</item>
+    </style>
+
+    <style name="Theme.Clads.NoActionBar" >
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Clads.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <style name="Theme.Clads.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+    <style name="ShapeAppearanceOverlay.App.SelectedCornerRadius" parent="">
+        <item name="cornerSizeTopLeft">15dp</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerSizeBottomRight">15dp</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+    </style>
+</resources>

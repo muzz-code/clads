@@ -1,0 +1,170 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
+    id "org.jlleitschuh.gradle.ktlint"
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.decagonhq.clads"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        // multiDexEnabled true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+
+        kapt {
+            javacOptions {
+                // These options are normally set automatically via the Hilt Gradle plugin, but we
+                // set them manually to workaround a bug in the Kotlin 1.5.20
+                option("-Adagger.fastInit=ENABLED")
+                option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true")
+            }
+        }
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures { viewBinding = true }
+
+}
+
+dependencies {
+
+    // Default Dependencies
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
+    implementation 'com.google.firebase:firebase-crashlytics:18.0.0'
+    implementation 'com.google.firebase:firebase-analytics:19.0.0'
+    implementation 'com.google.firebase:firebase-database:20.0.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'com.google.android.material:material:1.5.0-alpha02'
+    implementation 'com.github.PhilJay:MPAndroidChart:v2.2.2'
+
+    implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+
+    implementation 'net.gotev:uploadservice:2.1'
+
+    // androidx.test
+    androidTestImplementation "androidx.test:runner:$versions.androidx_test"
+    androidTestImplementation "androidx.test:core:$versions.androidx_test"
+    androidTestImplementation "androidx.test.ext:junit-ktx:1.1.3"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    testImplementation "com.google.truth:truth:$versions.truth_version"
+
+    // Firebase
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation platform("com.google.firebase:firebase-bom:$versions.firebase_version")
+    implementation "com.google.android.gms:play-services-auth:$versions.play_service_auth"
+
+    // Navigation Controller
+    implementation "androidx.navigation:navigation-fragment-ktx:$versions.nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$versions.nav_version"
+    androidTestImplementation "androidx.navigation:navigation-testing:$versions.nav_version"
+
+    // Room Database
+    implementation "androidx.room:room-runtime:$versions.room_version"
+    annotationProcessor "androidx.room:room-compiler:$versions.room_version"
+    kapt "androidx.room:room-compiler:$versions.room_version"
+    implementation "androidx.room:room-ktx:$versions.room_version"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$versions.okhttp3_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$versions.okhttp3_version"
+
+    // Dagger-hilt
+    implementation "com.google.dagger:hilt-android:$versions.hilt_version"
+    annotationProcessor "androidx.room:room-compiler:$versions.room_version"
+    kapt "com.google.dagger:hilt-android-compiler:$versions.hilt_version"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$versions.hilt_life_cycle_version"
+    kapt "androidx.hilt:hilt-compiler:$versions.hilt_compiler_version"
+
+    // Life cycles
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle_version"
+
+    // fragment Ktx
+    implementation "androidx.fragment:fragment-ktx:$versions.fragment_version"
+    debugImplementation "androidx.fragment:fragment-testing:$versions.fragment_version"
+    
+    implementation "com.jakewharton.timber:timber:$versions.timber_version"
+
+    // Mockito
+    testImplementation "org.mockito:mockito-core:$versions.mockito_version"
+    androidTestImplementation "org.mockito:mockito-android:$versions.mockito_version"
+
+    // Circle Image View
+    implementation "de.hdodenhof:circleimageview:$versions.circle_iv_version"
+
+    // Dependency for exoplayer
+    implementation "com.google.android.exoplayer:exoplayer-core:$versions.exoplayer_version"
+    implementation "com.google.android.exoplayer:exoplayer-dash:$versions.exoplayer_version"
+    implementation "com.google.android.exoplayer:exoplayer-ui:$versions.exoplayer_version"
+    implementation "com.google.android.exoplayer:exoplayer:$versions.exoplayer_version"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$versions.glide_version"
+    kapt "com.github.bumptech.glide:compiler:$versions.glide_version"
+    implementation "com.github.bumptech.glide:glide:$versions.glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$versions.glide_version"
+
+    // location implementation with lifecycle
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+
+    // Image crop
+    api "com.theartofdev.edmodo:android-image-cropper:$versions.crop_image"
+
+    /* Image Compressor */
+    implementation "id.zelory:compressor:$versions.image_compressor"
+
+    /* Location */
+    implementation "com.google.android.gms:play-services-location:$versions.location_versions"
+    implementation "com.google.android.gms:play-services-maps:$versions.map_version"
+
+    //groupie recyclerview library
+    implementation "com.github.lisawray.groupie:groupie:2.1.0"
+
+}

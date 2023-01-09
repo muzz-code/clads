@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/account_fragment_nested_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.profile.editprofile.AccountFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/email_confirmatory_background_color"
+        tools:context=".ui.profile.editprofile.AccountFragment">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/account_fragment_edit_profile_icon_image_view"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/layout_height"
+            android:layout_marginTop="@dimen/margin_34dp"
+            android:src="@drawable/nav_drawer_profile_avatar"
+            app:layout_constraintDimensionRatio="w,1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_change_picture_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_4dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/tap_to_change_profile_picture"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_9sp"
+            app:layout_constraintEnd_toEndOf="@+id/account_fragment_edit_profile_icon_image_view"
+            app:layout_constraintStart_toStartOf="@+id/account_fragment_edit_profile_icon_image_view"
+            app:layout_constraintTop_toBottomOf="@id/account_fragment_edit_profile_icon_image_view"
+            tools:layout_editor_absoluteY="166dp" />
+
+        <View
+            android:id="@+id/account_fragment_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_18dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/account_fragment_change_picture_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_first_name_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/first_name"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/account_fragment_first_name_value_text_view"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_first_name_value_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_28dp"
+            android:layout_marginEnd="@dimen/margin_23dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="end"
+            android:text=""
+            android:hint="@string/tap_to_enter_first_name"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/account_fragment_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/account_fragment_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_last_name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/last_name"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/account_fragment_last_name_value_text_view"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_last_name_value_text_view"
+            android:layout_width="@dimen/margin_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_27dp"
+            android:layout_marginEnd="@dimen/margin_23dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="end"
+            android:text=""
+            android:hint="@string/tap_to_enter_last_name"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/account_fragment_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/account_fragment_first_name_value_text_view" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_other_name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/phone_number"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/account_fragment_phone_number_value_text_view"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_phone_number_value_text_view"
+            android:layout_width="@dimen/margin_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_30dp"
+            android:layout_marginEnd="@dimen/margin_23dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="end"
+            android:text=""
+            android:hint="@string/tap_to_enter_number"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/account_fragment_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/account_fragment_last_name_value_text_view" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_gender_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/gender"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/account_fragment_gender_value_text_view"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_gender_value_text_view"
+            android:layout_width="@dimen/margin_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_30dp"
+            android:layout_marginEnd="@dimen/margin_23dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="end"
+            android:hint="@string/tap_to_select_gender"
+            android:text=""
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/account_fragment_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/account_fragment_phone_number_value_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_workshop_address_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24dp"
+            android:layout_marginTop="@dimen/margin_30dp"
+            android:fontFamily="@font/poppins"
+            android:text="Address"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/account_fragment_gender_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_workshop_address_value_text_view"
+            android:layout_width="@dimen/margin_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_30dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="end"
+            android:hint="Tap to setup coOrdinates"
+            android:text=""
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/account_fragment_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/account_fragment_gender_value_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_number_of_employee_apprentice_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/number_of_employees_apprentice"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/account_fragment_number_of_employee_apprentice_value_text_view"
+            app:layout_constraintEnd_toStartOf="@+id/account_fragment_guideline"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_number_of_employee_apprentice_value_text_view"
+            android:layout_width="@dimen/margin_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginEnd="@dimen/margin_23dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="end"
+            android:hint="@string/tap_to_enter_employees_num"
+            android:text="@string/_0"
+            android:layout_marginTop="@dimen/margin_30dp"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/account_fragment_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/account_fragment_workshop_address_value_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_legal_status_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/legal_status"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/account_fragment_legal_status_value_text_view"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_legal_status_value_text_view"
+            android:layout_width="@dimen/margin_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_30dp"
+            android:layout_marginEnd="@dimen/margin_23dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="end"
+            android:text=""
+            android:hint="@string/tap_to_enter_legal_status"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/account_fragment_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/account_fragment_number_of_employee_apprentice_value_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_union_membership_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24dp"
+            android:layout_marginTop="@dimen/margin_45dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/union_membership"
+            android:textAllCaps="true"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/account_fragment_legal_status_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_name_of_union_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/name_of_union"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/account_fragment_name_of_union_value_text_view"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_name_of_union_value_text_view"
+            android:layout_width="@dimen/margin_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:layout_marginEnd="@dimen/margin_23dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="end"
+            android:text=""
+            android:hint="@string/tap_to_enter_union_name"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/account_fragment_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/account_fragment_union_membership_text_view" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_ward_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/ward"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/account_fragment_ward_value_text_view"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_ward_value_text_view"
+            android:layout_width="@dimen/margin_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_30dp"
+            android:layout_marginEnd="@dimen/margin_23dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="end"
+            android:text=""
+            android:hint="@string/tap_to_enter_union_ward"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/account_fragment_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/account_fragment_name_of_union_value_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_local_govt_area_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/local_govt_area"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/account_fragment_local_govt_area_value_text_view"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_local_govt_area_value_text_view"
+            android:layout_width="@dimen/margin_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_30dp"
+            android:layout_marginEnd="@dimen/margin_23dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="end"
+            android:text=""
+            android:hint="@string/tap_to_enter_union_lga"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/account_fragment_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/account_fragment_ward_value_text_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_state_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/state"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/account_fragment_state_value_text_view"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_fragment_state_value_text_view"
+            android:layout_width="@dimen/margin_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_30dp"
+            android:layout_marginEnd="@dimen/margin_23dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="end"
+            android:text=""
+            android:hint="@string/tap_to_enter_union_state"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/account_fragment_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/account_fragment_local_govt_area_value_text_view" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/account_fragment_save_changes_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/ClientAccountFragmentButton"
+            android:layout_marginBottom="@dimen/margin_34dp"
+            android:text="@string/save_changes"
+            app:cornerRadius="@dimen/corner_radius_5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/account_fragment_state_text_view" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/account_fragment_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.45" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

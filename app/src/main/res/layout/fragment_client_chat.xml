@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.messages.ClientChatFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/client_chat_fragment_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/client_chat_fragment_type_message_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/happy_face"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/client_chat_fragment_type_message_edit_text"
+        app:layout_constraintEnd_toStartOf="@id/client_chat_fragment_type_message_edit_text"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/client_chat_fragment_type_message_edit_text"
+        app:srcCompat="@drawable/ic_happy_face" />
+
+    <EditText
+        android:id="@+id/client_chat_fragment_type_message_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_8dp"
+        android:layout_marginBottom="@dimen/margin_24dp"
+        android:background="@drawable/chat_recycler_view_item_background"
+        android:hint="@string/type_a_message"
+        android:fontFamily="@font/poppins"
+        android:paddingHorizontal="@dimen/padding_16dp"
+        android:paddingVertical="@dimen/margin_10dp"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@null"
+        android:textSize="@dimen/text_size_16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/client_chat_fragment_send_button"
+        app:layout_constraintStart_toEndOf="@+id/happy_face" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/client_chat_fragment_send_button"
+        android:layout_width="36dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/deep_sky_blue"
+        android:clickable="true"
+        android:layout_marginEnd="@dimen/margin_11dp"
+        android:focusable="true"
+        android:src="@drawable/fab_send_icon"
+        android:tint="@color/deep_sky_blue"
+        app:backgroundTint="@color/deep_sky_blue"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="@+id/client_chat_fragment_type_message_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/client_chat_fragment_type_message_edit_text"
+        app:layout_constraintTop_toTopOf="@+id/client_chat_fragment_type_message_edit_text"
+        app:layout_constraintVertical_bias="0.0"
+        app:tint="@color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

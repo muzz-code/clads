@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/margin_24dp"
+    tools:context=".ui.client.AddAddressFragment">
+
+    <TextView
+        android:id="@+id/add_address_fragment_title_add_address_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_27dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:fontFamily="@font/poppins_bold"
+        android:letterSpacing="@dimen/letter_spacing_0_1"
+        android:text="@string/add_delivery_address"
+        android:textColor="@color/navy_blue"
+        android:textSize="@dimen/text_size_16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/add_address_fragment_enter_delivery_address_edit_text_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_27dp"
+        app:boxStrokeColor="@color/deep_sky_blue"
+        app:boxStrokeWidth="@dimen/margin_2dp"
+        app:counterOverflowTextAppearance="@color/red"
+        app:counterOverflowTextColor="@color/red"
+        app:helperText="@string/enter_street_address"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_address_fragment_lga_address_edit_text_layout">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_address_fragment_enter_delivery_address_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/roboto_medium"
+            android:inputType="text"
+            android:paddingStart="@dimen/padding_0dp"
+            android:textColor="@color/navy_blue"
+            android:textCursorDrawable="@color/navy_blue"
+            android:textSize="@dimen/text_size_16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/add_address_fragment_lga_address_edit_text_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_27dp"
+        app:boxStrokeWidth="1dp"
+        app:helperText="@string/local_govt_area"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/add_address_fragment_enter_delivery_address_edit_text_layout"
+        app:layout_constraintStart_toStartOf="@+id/add_address_fragment_enter_delivery_address_edit_text_layout"
+        app:layout_constraintTop_toBottomOf="@+id/add_address_fragment_state_address_edit_text_layout">
+
+        <AutoCompleteTextView
+            android:id="@+id/add_address_fragment_lga_address_edit_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/roboto_medium"
+            android:inputType="none"
+            android:paddingStart="@dimen/padding_0dp"
+            android:text=""
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/add_address_fragment_state_address_edit_text_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_27dp"
+        app:boxStrokeWidth="1dp"
+        android:hint="@string/state_label_str"
+        app:helperText="@string/state"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/add_address_fragment_lga_address_edit_text_layout"
+        app:layout_constraintStart_toStartOf="@+id/add_address_fragment_lga_address_edit_text_layout"
+        app:layout_constraintTop_toBottomOf="@+id/add_address_fragment_title_add_address_text_view">
+
+        <AutoCompleteTextView
+            android:id="@+id/add_address_fragment_state_address_edit_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/roboto_medium"
+            android:inputType="none"
+            android:paddingStart="@dimen/padding_0dp"
+            android:text=""
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/add_address_fragment_save_address_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_55dp"
+        android:layout_marginHorizontal="@dimen/margin_27dp"
+        android:layout_marginVertical="@dimen/margin_26dp"
+        android:fontFamily="@font/poppins"
+        android:hint="@string/all_save"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/text_size_12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.296"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_address_fragment_enter_delivery_address_edit_text_layout"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
